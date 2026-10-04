@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ámbar Café | Café de especialidad</title>
+  <meta name="description" content="Café de especialidad, tostado cada semana. Ven a hacer una pausa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="#inicio" class="logo">Ámbar<span>.</span></a>
+    <ul>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#reservas">Reservas <span class="badge" id="badgeReservas" hidden>0</span></a></li>
+    </ul>
+    <a href="#contacto" class="btn btn-sm">Reservar</a>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="hero-texto">
+      <p class="etiqueta">Café de especialidad</p>
+      <h1>Cada taza,<br><em>una pequeña pausa.</em></h1>
+      <p class="sub">Granos de origen, tostados cada semana y preparados con calma. Un rincón para conversar, trabajar o simplemente respirar.</p>
+      <div class="hero-botones">
+        <a href="#menu" class="btn">Ver el menú</a>
+        <a href="#nosotros" class="btn btn-ghost">Nuestra historia</a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 220 220" class="taza">
+        <defs>
+          <linearGradient id="cobre" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e0a468"/>
+            <stop offset="1" stop-color="#8c5a2b"/>
+          </linearGradient>
+        </defs>
+        <g class="vapor" fill="none" stroke="#f3e9dc" stroke-width="4" stroke-linecap="round">
+          <path d="M85 60 C75 45, 95 35, 85 20"/>
+          <path d="M110 65 C100 48, 120 38, 110 20"/>
+          <path d="M135 60 C125 45, 145 35, 135 20"/>
+        </g>
+        <ellipse cx="110" cy="200" rx="70" ry="7" fill="#000" opacity=".35"/>
+        <path d="M170 100 H185 C200 100 200 140 180 145 H168" fill="none" stroke="#c98a4b" stroke-width="9" stroke-linecap="round"/>
+        <path d="M50 85 H170 V140 C170 170 145 190 110 190 C75 190 50 170 50 140 Z" fill="url(#cobre)"/>
+        <ellipse cx="110" cy="85" rx="60" ry="9" fill="#2a1d14"/>
+      </svg>
+    </div>
+  </header>
+
+  <section class="seccion" id="menu">
+    <div class="cabecera reveal">
+      <p class="etiqueta">Nuestro menú</p>
+      <h2>Hecho con calma</h2>
+    </div>
+    <div class="tabs reveal">
+      <button class="tab activa" data-cat="cafe">Café</button>
+      <button class="tab" data-cat="frio">Fríos</button>
+      <button class="tab" data-cat="dulce">Dulces</button>
+    </div>
+    <div class="items" id="items"></div>
+  </section>
+
+  <section class="seccion alt" id="nosotros">
+    <div class="nosotros">
+      <div class="reveal">
+        <p class="etiqueta">Nuestra historia</p>
+        <h2>De la finca a tu taza</h2>
+        <p>Nacimos de una idea simple: que un buen café no debería ser complicado. Trabajamos directamente con pequeños productores y tostamos en lotes cortos para que cada taza llegue fresca.</p>
+        <p>Aquí no hay prisa. Hay música suave, buena conversación y un café preparado con cuidado.</p>
+      </div>
+      <div class="stats reveal">
+        <div><strong>12</strong><span>Orígenes</span></div>
+        <div><strong>7 días</strong><span>Tueste fresco</span></div>
+        <div><strong>100%</strong><span>Comercio directo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="contacto">
+    <div class="contacto">
+      <div class="reveal">
+        <p class="etiqueta">Visítanos</p>
+        <h2>Reserva tu mesa</h2>
+        <ul class="datos">
+          <li>📍 Colonia Escalón, San Salvador</li>
+          <li>🕖 Lun a Sáb: 7:00 am – 8:00 pm</li>
+          <li>✉️ hola@ambarcafe.com</li>
+        </ul>
+      </div>
+      <form class="form reveal" id="form">
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+        <input type="email" id="correo" placeholder="Tu correo" required>
+        <div class="fila-doble">
+          <input type="date" id="fechaReserva" required aria-label="Fecha de la reserva">
+          <input type="number" id="personas" min="1" max="12" placeholder="Personas" required>
+        </div>
+        <textarea id="notas" rows="3" placeholder="Comentarios (opcional): cumpleaños, alergias, mesa afuera..."></textarea>
+        <div class="resumen" id="resumen" hidden></div>
+        <button type="submit" class="btn">Enviar solicitud</button>
+        <p class="mensaje" id="mensaje"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="seccion alt" id="reservas">
+    <div class="cabecera reveal">
+      <p class="etiqueta">Tus reservas</p>
+      <h2>Reservas realizadas</h2>
+      <p class="sub-reservas" id="subReservas"></p>
+      <button class="btn-eliminar-todas" id="eliminarTodas" hidden>🗑 Eliminar todas</button>
+    </div>
+    <div class="reservas" id="listaReservas"></div>
+  </section>
+
+  <footer>
+    <p>© 2026 Ámbar Café · Proyecto de portafolio con fines demostrativos</p>
+  </footer>
+
+  <button class="carrito-btn" id="abrirCarrito" aria-label="Abrir pedido">
+    🛒 Pedido <span id="cuenta">0</span>
+  </button>
+
+  <div class="fondo" id="fondo"></div>
+
+  <aside class="carrito" id="carrito" aria-hidden="true">
+    <div class="carrito-cab">
+      <h3>Tu pedido</h3>
+      <button id="cerrarCarrito" aria-label="Cerrar pedido">✕</button>
+    </div>
+    <div class="carrito-items" id="carritoItems"></div>
+    <div class="carrito-pie">
+      <div class="total"><span>Total</span><strong id="total">$0.00</strong></div>
+      <button class="btn" id="continuar">Reservar con mi pedido</button>
+      <button class="vaciar" id="vaciar">Vaciar pedido</button>
+    </div>
+  </aside>
+
+  <div class="modal-fondo" id="modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+      <div class="modal-icono">🗑</div>
+      <h3 id="modalTitulo">¿Eliminar reserva?</h3>
+      <p id="modalTexto"></p>
+      <div class="modal-botones">
+        <button class="btn btn-ghost" id="modalCancelar">Mantener</button>
+        <button class="btn btn-peligro" id="modalAceptar">Sí, eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
