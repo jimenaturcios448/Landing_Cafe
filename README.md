@@ -63,7 +63,7 @@ Landing_Cafe/
 │   ├── historia.png
 │   ├── pedido.png
 │   ├── reserva.png
-│   └── reserva_realizadas.png
+│   └── reservas_realizadas.png
 ├── index.html
 ├── style.css
 ├── script.js
