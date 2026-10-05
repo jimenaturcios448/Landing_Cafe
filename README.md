@@ -51,7 +51,7 @@ Landing page responsive para una cafetería de especialidad ficticia. Además de
 
 ### Reservas realizadas
 
-![Tarjetas de reservas realizadas](capturas/reserva_realizadas.png)
+![Tarjetas de reservas realizadas](capturas/reservas_realizadas.png)
 
 ## Estructura del proyecto
 
