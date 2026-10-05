@@ -55,7 +55,7 @@ Landing page responsive para una cafetería de especialidad ficticia. Además de
 
 ## Estructura del proyecto
 
-```text
+```
 Landing_Cafe/
 ├── capturas/
 │   ├── inicio.png
@@ -68,6 +68,7 @@ Landing_Cafe/
 ├── style.css
 ├── script.js
 └── README.md
+```
 
 ## Cómo usarlo
 
